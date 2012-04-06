@@ -4,6 +4,14 @@ from django.contrib.auth import login
 
 from pinax.apps.account.signals import user_logged_in, password_changed
 
+def ishexstr(s):
+    for c in s:
+        if not ishex(c):
+            return False
+    return True
+
+def ishex(c):
+        return '0' <= c <= '9' or 'a' <= c <= 'f' or 'A' <= c <= 'F'
 
 def get_default_redirect(request, fallback_url, redirect_field_name="next", session_key_value="redirect_to"):
     """
