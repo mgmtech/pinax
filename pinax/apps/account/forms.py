@@ -421,7 +421,7 @@ class ResetPasswordForm(forms.Form):
             subject = _("Password reset email sent")
             message = render_to_string("account/password_reset_key_message.txt", {
                 "user": user,
-                "uid": int_to_base36(user.id) if not ishexstr(user.id) else int_to_base36(int(user.id), 16),
+                "uid": int_to_base36(user.id) if not ishexstr(user.id) else int_to_base36(int(user.id, 16)),
                 "temp_key": temp_key,
                 "domain": domain,
             })
