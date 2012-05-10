@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 
 class ChangePasswordTest(TestCase):
-    urls = "pinax.apps.account.tests.account_urls"
+   # urls = "pinax.apps.account.tests.account_urls"
     
     def setUp(self):
         self.old_installed_apps = settings.INSTALLED_APPS
